@@ -57,14 +57,13 @@ class SVG {
             const shape = new Square
             shape.setColor(this.shapeColor)
             shapeDraw = shape.render()
-            textDraw = `<text text-anchor="middle" x="100" y="75" fill="${this.textColor}">${this.text}</text>`
+            textDraw = `<text text-anchor="middle" x="100" y="100" fill="${this.textColor}">${this.text}</text>`
         }
         fs.writeFile('logo.svg', 
         `<svg width="300" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
         ${shapeDraw}
         ${textDraw}
-        </svg>
-        `
+        </svg>`
         , (err) =>
             err ? console.error(err) : console.log('Success!')
         )
